@@ -11,27 +11,27 @@ import { Routes } from 'react-router'
 
 function App() {
   return (
-    <>
-    <Router>
-      <nav className="c-menu">
-        <Link to="/">Home</Link>
-      <Link to="/Favoritos">Favorito</Link>
-      <Link to="/Original">Original</Link>
-      <Link to="/Informativa">Informativa</Link>
-      <Link to="/Usuario">Usuario</Link>
-      </nav>
+      <>
+          <Router>
+                <nav className="c-menu">
+                        <Link to="/">Home</Link>
+                              <Link to="/Favoritos">Favorito</Link>
+                                    <Link to="/Original">Original</Link>
+                                          <Link to="/Informativa">Informativa</Link>
+                                                <Link to="/Usuario">Usuario</Link>
+                                                      </nav>
 
-      <Routes>
-        <Route path='/'element={<Home/>}/>
-        <Route path='/Favoritos'element={<Favorito/>}/>
-        <Route path='/pais/:cca2'element={<Pais/>}/>
-        <Route path='/Original'element={<Original/>}/>
-        <Route path='/Informativa'element={<Infromativa/>}/>
-        <Route path='/Usuario'element={<Usuario/>}/>
-        <Route path='/Elemento'element={<Pais/>}/>
-      </Routes>
-      </Router>
-    </>
+                                                            <Routes>
+                                                                    <Route path='/'element={<Home/>}/>
+                                                                            <Route path='/Favoritos'element={<Favorito/>}/>
+                                                                                    <Route path='/pais/:cca2'element={<Pais/>}/>
+                                                                                            <Route path='/Original'element={<Original/>}/>
+                                                                                                    <Route path='/Informativa'element={<Infromativa/>}/>
+                                                                                                            <Route path='/Usuario'element={<Usuario/>}/>
+                                                                                                                    <Route path='/Elemento'element={<Pais/>}/>
+                                                                                                                          </Routes>
+                                                                                                                                </Router>
+      </>
   )
 }
 
