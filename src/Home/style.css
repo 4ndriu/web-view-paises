@@ -34,14 +34,19 @@ input[type="text"] {
   color: #1a1a1a;
   font-size: 0.95rem;
   outline: none;
+  box-sizing: border-box;
 }
 
 input[type="text"]:focus { border-color: #4a6cf7; }
 
+
 .tabla-container {
-  max-width: 100%;
+  width: 100%;
   margin: 1.5rem auto;
   padding: 0 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
 }
 
 .tabla-container h2 {
@@ -54,8 +59,8 @@ input[type="text"]:focus { border-color: #4a6cf7; }
 .tabla-posiciones,
 .tabla-estadisticas {
   width: 100%;
+  min-width: 480px; 
   border-collapse: collapse;
-  table-layout: fixed;
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
@@ -72,17 +77,16 @@ input[type="text"]:focus { border-color: #4a6cf7; }
   padding: 0.5rem 0.4rem;
   text-align: left;
   font-size: 0.88rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; 
 }
 
-.tabla-posiciones th:nth-child(1), .tabla-posiciones td:nth-child(1) { width: 30px; }
-.tabla-posiciones th:nth-child(2), .tabla-posiciones td:nth-child(2) { width: 45px; }
-.tabla-posiciones th:nth-child(3), .tabla-posiciones td:nth-child(3) { width: auto; }
-.tabla-posiciones th:nth-child(4), .tabla-posiciones td:nth-child(4) { width: 90px; }
-.tabla-posiciones th:nth-child(5), .tabla-posiciones td:nth-child(5) { width: 80px; }
-.tabla-posiciones th:nth-child(6), .tabla-posiciones td:nth-child(6) { width: 80px; }
+
+.tabla-posiciones th:nth-child(1), .tabla-posiciones td:nth-child(1) { width: 28px; text-align: center; }
+.tabla-posiciones th:nth-child(2), .tabla-posiciones td:nth-child(2) { width: 40px; text-align: center; }
+.tabla-posiciones th:nth-child(3), .tabla-posiciones td:nth-child(3) { min-width: 110px; }
+.tabla-posiciones th:nth-child(4), .tabla-posiciones td:nth-child(4) { min-width: 85px; }
+.tabla-posiciones th:nth-child(5), .tabla-posiciones td:nth-child(5) { min-width: 85px; }
+.tabla-posiciones th:nth-child(6), .tabla-posiciones td:nth-child(6) { min-width: 95px; text-align: right; padding-right: 0.6rem; }
 
 .tabla-posiciones tbody tr,
 .tabla-estadisticas tbody tr {
