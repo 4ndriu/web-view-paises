@@ -90,3 +90,18 @@
   border-color: #7b9cff;
   color: #7b9cff;
 }
+
+.pais-container {
+  max-width: 100%;
+  padding: 0 0.8rem;
+  margin: 1rem auto;
+}
+
+.pais-header {
+  flex-wrap: wrap;
+}
+
+.pais-card p {
+  flex-direction: column;
+  gap: 0.2rem;
+}

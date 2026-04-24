@@ -9,7 +9,9 @@ body {
   color: #e0e0e0;
   font-family: sans-serif;
   padding-bottom: 70px;
+  -webkit-text-size-adjust: 100%;
 }
+
 
 .c-menu {
   background: #1a1d24;
@@ -21,6 +23,7 @@ body {
   bottom: 0;
   left: 0;
   padding: 10px 0;
+  z-index: 100;
 }
 
 .c-menu a {
@@ -45,4 +48,197 @@ body {
 
 .c-menu p {
   font-size: 11px;
+}
+
+
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.filtros button {
+  background: #1a1d24;
+  color: #aaa;
+  border: 1px solid #2a2d35;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filtros button:hover {
+  background: #22263a;
+  color: #ddd;
+}
+
+.filtros button.activo {
+  background: #22263a;
+  color: #7b9cff;
+  border-color: #7b9cff;
+}
+
+
+input[type="text"] {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 90%;
+  max-width: 600px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2a2d35;
+  background: #1a1d24;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #7b9cff;
+}
+
+
+.tabla-container {
+  max-width: 650px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-container h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.tabla-posiciones,
+.tabla-estadisticas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-posiciones thead tr,
+.tabla-estadisticas thead tr {
+  background: #1a1d24;
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.tabla-posiciones th,
+.tabla-estadisticas th {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.tabla-posiciones tbody tr,
+.tabla-estadisticas tbody tr {
+  border-bottom: 1px solid #1e2128;
+  transition: background 0.15s;
+}
+
+.tabla-posiciones tbody tr:hover,
+.tabla-estadisticas tbody tr:hover {
+  background: #1a1d24;
+}
+
+.tabla-posiciones td,
+.tabla-estadisticas td {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.tabla-posiciones a,
+.tabla-estadisticas a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.tabla-posiciones a:hover,
+.tabla-estadisticas a:hover {
+  color: #7b9cff;
+}
+
+
+@media (max-width: 768px) {
+
+  .tabla-container {
+    padding: 0 0.5rem;
+  }
+
+  .tabla-posiciones,
+  .tabla-estadisticas {
+    font-size: 0.78rem;
+  }
+
+  .tabla-posiciones th,
+  .tabla-posiciones td,
+  .tabla-estadisticas th,
+  .tabla-estadisticas td {
+    padding: 0.4rem 0.3rem;
+    white-space: nowrap;
+  }
+
+  .filtros {
+    gap: 0.3rem;
+    padding: 0.5rem;
+  }
+
+  .filtros button {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  input[type="text"] {
+    width: 95%;
+    font-size: 0.85rem;
+  }
+
+  .pais-container {
+    padding: 0 0.8rem;
+    margin: 1rem auto;
+  }
+
+  .pais-header {
+    flex-wrap: wrap;
+  }
+
+  .pais-card p {
+    flex-direction: column;
+    gap: 0.2rem;
+    font-size: 0.85rem;
+  }
+
+  .original-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .original-card {
+    padding: 0.8rem;
+  }
+
+  .favoritos-item {
+    gap: 0.6rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .favoritos-item a {
+    font-size: 0.85rem;
+  }
+
+  .informativa-container {
+    padding: 0 0.8rem;
+  }
+
+  .informativa-card {
+    padding: 1rem;
+  }
 }

@@ -104,3 +104,22 @@ input[type="text"]:focus {
 .tabla-posiciones a:hover {
   color: #7b9cff;
 }
+
+.tabla-container {
+  width: 100%;
+  padding: 0 0.5rem;
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-posiciones {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem; 
+}
+
+.tabla-posiciones th,
+.tabla-posiciones td {
+  padding: 0.5rem 0.4rem;
+  white-space: nowrap; 
+}
