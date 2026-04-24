@@ -1,0 +1,106 @@
+.tabla-container {
+  max-width: 650px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.tabla-container h2 {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.filtros button {
+  background: #1a1d24;
+  color: #aaa;
+  border: 1px solid #2a2d35;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filtros button:hover {
+  background: #22263a;
+  color: #ddd;
+}
+
+.filtros button.activo {
+  background: #22263a;
+  color: #7b9cff;
+  border-color: #7b9cff;
+}
+
+/* Buscador */
+input[type="text"] {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 90%;
+  max-width: 600px;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #2a2d35;
+  background: #1a1d24;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #7b9cff;
+}
+
+/* Tabla */
+.tabla-posiciones {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-posiciones thead tr {
+  background: #1a1d24;
+  color: #888;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.tabla-posiciones th {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.tabla-posiciones tbody tr {
+  border-bottom: 1px solid #1e2128;
+  transition: background 0.15s;
+}
+
+.tabla-posiciones tbody tr:hover {
+  background: #1a1d24;
+}
+
+.tabla-posiciones td {
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.tabla-posiciones a {
+  color: #e0e0e0;
+  text-decoration: none;
+}
+
+.tabla-posiciones a:hover {
+  color: #7b9cff;
+}

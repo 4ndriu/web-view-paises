@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import './style.css'
 
 interface Pais {
   cca2: string

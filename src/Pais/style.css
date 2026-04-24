@@ -1,0 +1,92 @@
+.pais-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pais-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pais-header img {
+  border-radius: 6px;
+  border: 1px solid #2a2d35;
+}
+
+.pais-header h1 {
+  font-size: 1.6rem;
+  color: #e0e0e0;
+}
+
+.pais-header p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.pais-card {
+  background: #1a1d24;
+  border: 1px solid #2a2d35;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pais-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pais-card span {
+  color: #888;
+}
+
+.pais-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.pais-links a {
+  flex: 1;
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #2a2d35;
+  background: #1a1d24;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.pais-links a:hover {
+  background: #22263a;
+  color: #7b9cff;
+  border-color: #7b9cff;
+}
+
+.pais-favorito {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #2a2d35;
+  background: #1a1d24;
+  color: #e0e0e0;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pais-favorito:hover {
+  background: #22263a;
+  border-color: #7b9cff;
+  color: #7b9cff;
+}
