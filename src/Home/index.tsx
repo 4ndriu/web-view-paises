@@ -34,7 +34,7 @@ function Home() {
         const data: Pais[] = await res.json()
         setPaises(data.sort((a, b) => b.population - a.population))
       } catch (err: any) {
-        setError(err.message || 'Error al cargar los países')
+        setError(err.message || 'Error al cargar')
       } finally {
         setLoading(false)
       }
@@ -49,13 +49,14 @@ function Home() {
   )
 
   return (
-    <>
+    <div className="container">
+      
       <div className="filtros">
         {filtros.map((region) => (
           <button
             key={region}
             onClick={() => setFiltro(region)}
-            className={filtro === region ? 'activo' : ''}
+            className={filtro === region ? 'active' : ''}
           >
             {region}
           </button>
@@ -67,29 +68,22 @@ function Home() {
         placeholder="Buscar país..."
         value={busqueda}
         onChange={(e) => setBusqueda(e.target.value)}
+        className="buscador"
       />
 
+      {/* Tabla */}
       <div className="tabla-container">
         <h2>{filtro.toUpperCase()}</h2>
 
-        {loading && (
-          <p style={{ textAlign: 'center', color: '#888', padding: '2rem 0' }}>
-            Cargando países...
-          </p>
-        )}
-
-        {error && (
-          <p style={{ textAlign: 'center', color: 'red', padding: '1rem' }}>
-            Error: {error}
-          </p>
-        )}
+        {loading && <p className="mensaje">Cargando países...</p>}
+        {error && <p className="error"> {error}</p>}
 
         {!loading && !error && (
-          <table className="tabla-posiciones">
+          <table className="tabla">
             <thead>
               <tr>
                 <th>#</th>
-                <th>Bandera</th>
+                <th>🏳</th>
                 <th>País</th>
                 <th>Capital</th>
                 <th>Subregión</th>
@@ -101,7 +95,7 @@ function Home() {
                 <tr key={pais.cca2}>
                   <td>{index + 1}</td>
                   <td>
-                    <img src={pais.flags.png} alt={pais.name.common} width={32} />
+                    <img src={pais.flags.png} alt={pais.name.common} />
                   </td>
                   <td>
                     <Link to={`/pais/${pais.cca2.toLowerCase()}`}>
@@ -110,14 +104,16 @@ function Home() {
                   </td>
                   <td>{pais.capital?.[0] ?? '—'}</td>
                   <td>{pais.subregion}</td>
-                  <td>{pais.population.toLocaleString()}</td>
+                  <td className="poblacion">
+                    {pais.population.toLocaleString()}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         )}
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,28 +1,34 @@
+.container {
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Filtros */
 .filtros {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem;
   padding: 1rem;
-  max-width: 650px;
-  margin: 0 auto;
 }
 
 .filtros button {
-  background: #ffffff;
+  background: #fff;
   color: #555;
   border: 1px solid #ddd;
   border-radius: 20px;
   padding: 0.4rem 1rem;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.2s;
 }
 
-.filtros button:hover { background: #f0f0f0; color: #222; }
-.filtros button.activo { background: #eef1ff; color: #4a6cf7; border-color: #4a6cf7; }
+.filtros button.active {
+  background: #eef1ff;
+  color: #4a6cf7;
+  border: 1px solid #4a6cf7;
+}
 
-input[type="text"] {
+/* Buscador */
+.buscador {
   display: block;
   margin: 0 auto 1rem;
   width: 90%;
@@ -30,74 +36,68 @@ input[type="text"] {
   padding: 0.6rem 1rem;
   border-radius: 8px;
   border: 1px solid #ddd;
-  background: #ffffff;
-  color: #1a1a1a;
   font-size: 0.95rem;
-  outline: none;
-  box-sizing: border-box;
 }
 
-input[type="text"]:focus { border-color: #4a6cf7; }
-
-
+/* Tabla */
 .tabla-container {
   width: 100%;
-  margin: 1.5rem auto;
-  padding: 0 0.5rem;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  box-sizing: border-box;
+  padding: 0 0.5rem;
 }
 
 .tabla-container h2 {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
-.tabla-posiciones,
-.tabla-estadisticas {
+.tabla {
   width: 100%;
-  min-width: 480px; 
+  min-width: 480px;
   border-collapse: collapse;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 0.85rem;
 }
 
-.tabla-posiciones thead tr,
-.tabla-estadisticas thead tr {
+.tabla thead {
   background: #f0f0f0;
   color: #888;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
 }
 
-.tabla-posiciones th, .tabla-estadisticas th,
-.tabla-posiciones td, .tabla-estadisticas td {
+.tabla th,
+.tabla td {
   padding: 0.5rem 0.4rem;
-  text-align: left;
-  font-size: 0.88rem;
-  white-space: nowrap; 
 }
 
-
-.tabla-posiciones th:nth-child(1), .tabla-posiciones td:nth-child(1) { width: 28px; text-align: center; }
-.tabla-posiciones th:nth-child(2), .tabla-posiciones td:nth-child(2) { width: 40px; text-align: center; }
-.tabla-posiciones th:nth-child(3), .tabla-posiciones td:nth-child(3) { min-width: 110px; }
-.tabla-posiciones th:nth-child(4), .tabla-posiciones td:nth-child(4) { min-width: 85px; }
-.tabla-posiciones th:nth-child(5), .tabla-posiciones td:nth-child(5) { min-width: 85px; }
-.tabla-posiciones th:nth-child(6), .tabla-posiciones td:nth-child(6) { min-width: 95px; text-align: right; padding-right: 0.6rem; }
-
-.tabla-posiciones tbody tr,
-.tabla-estadisticas tbody tr {
+.tabla tr {
   border-bottom: 1px solid #ebebeb;
-  transition: background 0.15s;
 }
 
-.tabla-posiciones tbody tr:hover,
-.tabla-estadisticas tbody tr:hover { background: #f9f9f9; }
+.tabla img {
+  width: 32px;
+  display: block;
+}
 
-.tabla-posiciones td, .tabla-estadisticas td { color: #333; }
+.tabla a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
 
-.tabla-posiciones a, .tabla-estadisticas a { color: #1a1a1a; text-decoration: none; }
-.tabla-posiciones a:hover, .tabla-estadisticas a:hover { color: #4a6cf7; }
+/* Extras */
+.poblacion {
+  text-align: right;
+}
+
+.mensaje {
+  text-align: center;
+  color: #888;
+  padding: 2rem 0;
+}
+
+.error {
+  text-align: center;
+  color: red;
+}
