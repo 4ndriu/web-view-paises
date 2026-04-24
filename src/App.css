@@ -4,14 +4,18 @@
   box-sizing: border-box;
 }
 
-body {
+html, body, #root {
+  min-height: 100%;
+  height: 100%;
   background-color: #111318;
+}
+
+body {
   color: #e0e0e0;
   font-family: sans-serif;
   padding-bottom: 70px;
   -webkit-text-size-adjust: 100%;
 }
-
 
 .c-menu {
   background: #1a1d24;
@@ -36,20 +40,9 @@ body {
   transition: color 0.2s;
 }
 
-.c-menu a.active {
-  color: #7b9cff;
-}
-
-.c-menu img {
-  height: 22px;
-  display: block;
-  margin: 0 auto;
-}
-
-.c-menu p {
-  font-size: 11px;
-}
-
+.c-menu a.active { color: #7b9cff; }
+.c-menu img { height: 22px; }
+.c-menu p { font-size: 11px; }
 
 .filtros {
   display: flex;
@@ -72,17 +65,8 @@ body {
   transition: all 0.2s;
 }
 
-.filtros button:hover {
-  background: #22263a;
-  color: #ddd;
-}
-
-.filtros button.activo {
-  background: #22263a;
-  color: #7b9cff;
-  border-color: #7b9cff;
-}
-
+.filtros button:hover { background: #22263a; color: #ddd; }
+.filtros button.activo { background: #22263a; color: #7b9cff; border-color: #7b9cff; }
 
 input[type="text"] {
   display: block;
@@ -98,10 +82,7 @@ input[type="text"] {
   outline: none;
 }
 
-input[type="text"]:focus {
-  border-color: #7b9cff;
-}
-
+input[type="text"]:focus { border-color: #7b9cff; }
 
 .tabla-container {
   max-width: 650px;
@@ -133,10 +114,15 @@ input[type="text"]:focus {
 }
 
 .tabla-posiciones th,
-.tabla-estadisticas th {
+.tabla-estadisticas th,
+.tabla-posiciones td,
+.tabla-estadisticas td {
   padding: 0.6rem 0.8rem;
   text-align: left;
 }
+
+.tabla-posiciones td,
+.tabla-estadisticas td { font-size: 0.9rem; color: #ccc; }
 
 .tabla-posiciones tbody tr,
 .tabla-estadisticas tbody tr {
@@ -145,100 +131,33 @@ input[type="text"]:focus {
 }
 
 .tabla-posiciones tbody tr:hover,
-.tabla-estadisticas tbody tr:hover {
-  background: #1a1d24;
-}
-
-.tabla-posiciones td,
-.tabla-estadisticas td {
-  padding: 0.6rem 0.8rem;
-  font-size: 0.9rem;
-  color: #ccc;
-}
+.tabla-estadisticas tbody tr:hover { background: #1a1d24; }
 
 .tabla-posiciones a,
-.tabla-estadisticas a {
-  color: #e0e0e0;
-  text-decoration: none;
-}
+.tabla-estadisticas a { color: #e0e0e0; text-decoration: none; }
 
 .tabla-posiciones a:hover,
-.tabla-estadisticas a:hover {
-  color: #7b9cff;
-}
-
+.tabla-estadisticas a:hover { color: #7b9cff; }
 
 @media (max-width: 768px) {
+  .tabla-posiciones, .tabla-estadisticas { font-size: 0.78rem; }
 
-  .tabla-container {
-    padding: 0 0.5rem;
-  }
-
-  .tabla-posiciones,
-  .tabla-estadisticas {
-    font-size: 0.78rem;
-  }
-
-  .tabla-posiciones th,
-  .tabla-posiciones td,
-  .tabla-estadisticas th,
-  .tabla-estadisticas td {
+  .tabla-posiciones th, .tabla-posiciones td,
+  .tabla-estadisticas th, .tabla-estadisticas td {
     padding: 0.4rem 0.3rem;
     white-space: nowrap;
   }
 
-  .filtros {
-    gap: 0.3rem;
-    padding: 0.5rem;
-  }
-
-  .filtros button {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.7rem;
-  }
-
-  input[type="text"] {
-    width: 95%;
-    font-size: 0.85rem;
-  }
-
-  .pais-container {
-    padding: 0 0.8rem;
-    margin: 1rem auto;
-  }
-
-  .pais-header {
-    flex-wrap: wrap;
-  }
-
-  .pais-card p {
-    flex-direction: column;
-    gap: 0.2rem;
-    font-size: 0.85rem;
-  }
-
-  .original-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-
-  .original-card {
-    padding: 0.8rem;
-  }
-
-  .favoritos-item {
-    gap: 0.6rem;
-    padding: 0.6rem 0.8rem;
-  }
-
-  .favoritos-item a {
-    font-size: 0.85rem;
-  }
-
-  .informativa-container {
-    padding: 0 0.8rem;
-  }
-
-  .informativa-card {
-    padding: 1rem;
-  }
+  .filtros { gap: 0.3rem; padding: 0.5rem; }
+  .filtros button { font-size: 0.75rem; padding: 0.3rem 0.7rem; }
+  input[type="text"] { width: 95%; font-size: 0.85rem; }
+  .pais-container { padding: 0 0.8rem; margin: 1rem auto; }
+  .pais-header { flex-wrap: wrap; }
+  .pais-card p { flex-direction: column; gap: 0.2rem; font-size: 0.85rem; }
+  .original-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+  .original-card { padding: 0.8rem; }
+  .favoritos-item { gap: 0.6rem; padding: 0.6rem 0.8rem; }
+  .favoritos-item a { font-size: 0.85rem; }
+  .informativa-container { padding: 0 0.8rem; }
+  .informativa-card { padding: 1rem; }
 }
