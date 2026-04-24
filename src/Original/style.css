@@ -1,14 +1,5 @@
-.original-container {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.original-container h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #e0e0e0;
-}
+.original-container { max-width: 700px; margin: 2rem auto; padding: 0 1rem; }
+.original-container h1 { text-align: center; margin-bottom: 1.5rem; color: #1a1a1a; }
 
 .original-grid {
   display: grid;
@@ -17,8 +8,8 @@
 }
 
 .original-card {
-  background: #1a1d24;
-  border: 1px solid #2a2d35;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 10px;
   padding: 1.2rem;
   text-align: center;
@@ -26,39 +17,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
   transition: background 0.15s;
 }
 
-.original-card:hover {
-  background: #22263a;
-}
-
-.original-card img {
-  border-radius: 3px;
-}
-
-.original-emoji {
-  font-size: 1.8rem;
-}
-
-.original-label {
-  color: #7b9cff;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.original-nombre {
-  font-size: 0.95rem;
-  font-weight: bold;
-  color: #e0e0e0;
-}
-
-.original-valor {
-  color: #888;
-  font-size: 0.85rem;
-}
-
-.original-grid {
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-}
+.original-card:hover { background: #f9f9f9; }
+.original-card img { border-radius: 3px; }
+.original-emoji { font-size: 1.8rem; }
+.original-label { color: #4a6cf7; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.original-nombre { font-size: 0.95rem; font-weight: bold; color: #1a1a1a; }
+.original-valor { color: #888; font-size: 0.85rem; }

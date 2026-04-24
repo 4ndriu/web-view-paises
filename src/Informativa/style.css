@@ -7,34 +7,16 @@
   gap: 1rem;
 }
 
-.informativa-container h1 {
-  font-size: 1.8rem;
-  text-align: center;
-  margin-bottom: 0.5rem;
-  color: #e0e0e0;
-}
+.informativa-container h1 { font-size: 1.8rem; text-align: center; color: #1a1a1a; }
 
 .informativa-card {
-  background-color: #1a1d24;
+  background: #ffffff;
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
-  border: 1px solid #2a2d35;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 
-.informativa-card h2 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #7b9cff;
-}
-
-.informativa-card p,
-.informativa-card li {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #aaa;
-}
-
-.informativa-card ul {
-  padding-left: 1rem;
-  list-style: none;
-}
+.informativa-card h2 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #4a6cf7; }
+.informativa-card p, .informativa-card li { font-size: 0.95rem; line-height: 1.6; color: #555; }
+.informativa-card ul { padding-left: 1rem; list-style: none; }
