@@ -71,7 +71,7 @@ function Home() {
         className="buscador"
       />
 
-      {/* Tabla */}
+      
       <div className="tabla-container">
         <h2>{filtro.toUpperCase()}</h2>
 

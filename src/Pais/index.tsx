@@ -47,7 +47,6 @@ function Pais() {
         const json = await res.json();
         setData(json[0]);
 
-        // Verificar si ya es favorito
         const guardados: PaisFavorito[] = JSON.parse(localStorage.getItem('favoritos') || '[]')
         setEsFavorito(guardados.some((p) => p.cca2.toLowerCase() === cca2.toLowerCase()))
       } catch (error) {
