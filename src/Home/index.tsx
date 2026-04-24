@@ -22,18 +22,19 @@ function Home() {
   const filtros: FiltroRegion[] = ['america', 'europe', 'africa', 'asia', 'oceania']
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch(`https://restcountries.com/v3.1/region/${filtro}`)
-        const data: Pais[] = await res.json()
-        // Ordenar por población descendente
-        setPaises(data.sort((a, b) => b.population - a.population))
-      } catch (error) {
-        console.error('Error cargando países:', error)
-      }
+  const fetchData = async () => {
+    try {
+      const res = await fetch(`https://restcountries.com/v3.1/region/${filtro}`)
+      console.log('Status:', res.status)
+      const data: Pais[] = await res.json()
+      console.log('Países recibidos:', data.length)
+      setPaises(data.sort((a, b) => b.population - a.population))
+    } catch (error) {
+      console.error('Error cargando países:', error)
     }
-    fetchData()
-  }, [filtro])
+  }
+  fetchData()
+}, [filtro])
 
   const paisesFiltrados = paises.filter((pais) =>
     busqueda.length < 3
