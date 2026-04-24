@@ -18,23 +18,29 @@ function Home() {
   const [paises, setPaises] = useState<Pais[]>([])
   const [filtro, setFiltro] = useState<FiltroRegion>('america')
   const [busqueda, setBusqueda] = useState('')
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   const filtros: FiltroRegion[] = ['america', 'europe', 'africa', 'asia', 'oceania']
 
   useEffect(() => {
-  const fetchData = async () => {
-    try {
-      const res = await fetch(`https://restcountries.com/v3.1/region/${filtro}`)
-      console.log('Status:', res.status)
-      const data: Pais[] = await res.json()
-      console.log('Países recibidos:', data.length)
-      setPaises(data.sort((a, b) => b.population - a.population))
-    } catch (error) {
-      console.error('Error cargando países:', error)
+    const fetchData = async () => {
+      setLoading(true)
+      setError('')
+      setPaises([])
+      try {
+        const res = await fetch(`https://restcountries.com/v3.1/region/${filtro}`)
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const data: Pais[] = await res.json()
+        setPaises(data.sort((a, b) => b.population - a.population))
+      } catch (err: any) {
+        setError(err.message || 'Error al cargar los países')
+      } finally {
+        setLoading(false)
+      }
     }
-  }
-  fetchData()
-}, [filtro])
+    fetchData()
+  }, [filtro])
 
   const paisesFiltrados = paises.filter((pais) =>
     busqueda.length < 3
@@ -65,36 +71,51 @@ function Home() {
 
       <div className="tabla-container">
         <h2>{filtro.toUpperCase()}</h2>
-        <table className="tabla-posiciones">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Bandera</th>
-              <th>País</th>
-              <th>Capital</th>
-              <th>Subregión</th>
-              <th>Población</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paisesFiltrados.map((pais, index) => (
-              <tr key={pais.cca2}>
-                <td>{index + 1}</td>
-                <td>
-                  <img src={pais.flags.png} alt={pais.name.common} width={32} />
-                </td>
-                <td>
-                  <Link to={`/pais/${pais.cca2.toLowerCase()}`}>
-                    {pais.name.common}
-                  </Link>
-                </td>
-                <td>{pais.capital?.[0] ?? '—'}</td>
-                <td>{pais.subregion}</td>
-                <td>{pais.population.toLocaleString()}</td>
+
+        {loading && (
+          <p style={{ textAlign: 'center', color: '#888', padding: '2rem 0' }}>
+            Cargando países...
+          </p>
+        )}
+
+        {error && (
+          <p style={{ textAlign: 'center', color: 'red', padding: '1rem' }}>
+            Error: {error}
+          </p>
+        )}
+
+        {!loading && !error && (
+          <table className="tabla-posiciones">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Bandera</th>
+                <th>País</th>
+                <th>Capital</th>
+                <th>Subregión</th>
+                <th>Población</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {paisesFiltrados.map((pais, index) => (
+                <tr key={pais.cca2}>
+                  <td>{index + 1}</td>
+                  <td>
+                    <img src={pais.flags.png} alt={pais.name.common} width={32} />
+                  </td>
+                  <td>
+                    <Link to={`/pais/${pais.cca2.toLowerCase()}`}>
+                      {pais.name.common}
+                    </Link>
+                  </td>
+                  <td>{pais.capital?.[0] ?? '—'}</td>
+                  <td>{pais.subregion}</td>
+                  <td>{pais.population.toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </>
   )
