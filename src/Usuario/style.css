@@ -1,3 +1,4 @@
+/* ── Contenedor ── */
 .usuario-container {
   max-width: 600px;
   margin: 2rem auto;
@@ -13,12 +14,38 @@
   color: #1a1a1a;
 }
 
+/* ── Tabs login / registro ── */
+.usuario-tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 0.25rem;
+}
+
+.usuario-tabs button {
+  flex: 1;
+  padding: 0.6rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.usuario-tabs button.active {
+  color: #4a6cf7;
+  border-bottom-color: #4a6cf7;
+}
+
+/* ── Card ── */
 .usuario-card {
   background: #ffffff;
   border-radius: 10px;
   padding: 1.2rem 1.5rem;
   border: 1px solid #e0e0e0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
@@ -33,9 +60,89 @@
 .usuario-card p {
   font-size: 0.95rem;
   color: #333;
+  display: flex;
+  justify-content: space-between;
 }
 
 .usuario-card span {
   color: #888;
   margin-right: 0.3rem;
+}
+
+/* ── Formulario ── */
+.usuario-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.usuario-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.usuario-form input {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.usuario-form input:focus {
+  border-color: #4a6cf7;
+  background: #fff;
+}
+
+/* ── Botón submit ── */
+.usuario-submit {
+  width: 100%;
+  padding: 0.65rem;
+  background: #4a6cf7;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.3rem;
+}
+
+.usuario-submit:hover  { background: #3a5ce6; }
+.usuario-submit:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ── Error ── */
+.usuario-error {
+  font-size: 0.85rem;
+  color: #d94f4f;
+  background: #fff2f2;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #fbd0d0;
+}
+
+/* ── Logout ── */
+.usuario-logout {
+  width: 100%;
+  padding: 0.65rem;
+  background: #fff;
+  color: #d94f4f;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid #fbd0d0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.usuario-logout:hover {
+  background: #fff2f2;
+  border-color: #d94f4f;
 }
